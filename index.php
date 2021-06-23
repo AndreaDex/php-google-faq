@@ -70,18 +70,44 @@ $faq = [
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faq</title>
+    <!-- Google font -->
+   <link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" />
+    <!-- Link Css -->
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+<header>
+<div class="logo">
+    <img src="http://www.unioneistriani.it/wp-content/uploads/2020/02/fixed-google-logo-font.png" class="logo_img" alt="google logo">
+    <span>Privacy e Termini</span>
+</div>
+<nav>
+    <ul>
+        <li><a href="">Introduzione</a></li>
+        <li><a href="">Norme sulla privacy</a></li>
+        <li><a href="">Termini di servizio</a></li>
+        <li><a href="">Tecnologie</a></li>
+        <li ><a class="active" href="">Domande frequenti</a></li>
+    </ul>
+</nav>
+</header>
     
     <div class="container">
    <?php foreach($faq as $value){
-    //var_dump($value);
-    //var_dump($value['question']);
+    
    ?>
 
      <h2><?php echo $value['question'];?> </h2>
-     
+
+        <?php foreach($value['answer'] as $valore){ 
+        ?>
+        
+
+        <p><?php echo $valore; ?></p>
+    
+    <?php 
+    }
+    ?>
 
     <?php 
     } 
